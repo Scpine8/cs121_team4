@@ -43,7 +43,7 @@ async function loadResourcesAsync() {
     }),
   ]);
 }
-
+// handle load case 
 function handleLoadingError(error) {
   // In this case, you might want to report the error to your error reporting
   // service, for example Sentry
