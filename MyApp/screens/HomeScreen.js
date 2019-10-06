@@ -4,6 +4,7 @@ import {
   Image,
   Platform,
   ScrollView,
+  TextInput,
   StyleSheet,
   Text,
   TouchableOpacity,
