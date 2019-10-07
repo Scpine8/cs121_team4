@@ -1,16 +1,19 @@
 import * as WebBrowser from 'expo-web-browser';
 import React from 'react';
+
 import {
   Image,
   Platform,
   ScrollView,
   StyleSheet,
   Text,
+  TextInput,
   TouchableOpacity,
   View,
 } from 'react-native';
 
 import { MonoText } from '../components/StyledText';
+import { EmotionButton } from '../components/button/EmotionButton';
 
 export default function HomeScreen() {
   return (
@@ -59,17 +62,28 @@ export default function HomeScreen() {
         <Text style={styles.tabBarInfoText}>
           This is a tab bar. You can edit it in:
         </Text>
+      </View>
 
-        <View
-          style={[styles.codeHighlightContainer, styles.navigationFilename]}>
-          <MonoText style={styles.codeHighlightText}>
-            navigation/MainTabNavigator.js
-          </MonoText>
-        </View>
+    <View>
+      <EmotionButton
+          text = {"EmotionButton"} onPress = {handleEmotionButton()}
+      >
+      </EmotionButton>
+    </View>
+
+      <View
+        style={[styles.codeHighlightContainer, styles.navigationFilename]}>
+        <MonoText style={styles.codeHighlightText}>
+          navigation/MainTabNavigator.js
+        </MonoText>
       </View>
     </View>
   );
 }
+
+function handleEmotionButton() {
+  console.log('press EmotionButton');
+};
 
 HomeScreen.navigationOptions = {
   header: null,

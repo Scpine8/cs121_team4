@@ -16,7 +16,7 @@ export default EstyleSheet.create({
 
 	},
 	text: {
-		color: '$white'
+		color: '$white',
 		fontSize: 14,
 		fontWeight: 300,
 		paddingVertical: 20,
