@@ -1,17 +1,7 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- */
-
 import React from 'react';
 import {
   SafeAreaView,
   StyleSheet,
-  ActivityIndicator, //added for cards
-  FlatList, //added for cards
   ScrollView,
   View,
   Text,
@@ -26,49 +16,9 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-import Card from '/components/cards/Card';  //added for cards
-import { tsConstructorType } from '@babel/types';
-
-const App: () => React$Node = () => {
-  
-  //added for cards
-  //TODO: check constructor and componentDidMount
-  constructor(){
-    super();
-    this.state = {
-      items:[]
-    }
-  }
-  //added for cards
-  componentDidMount(){
-    this._get('https://jsonplaceholder.typicode.com/posts').then(
-      data => {
-        this.ListeningStateChangedEvent({items:data})
-      }
-    )
-  }
-  
-  //added for cards
-  //supposed to be within render
-  if(this.state.items.length==0){
-    return(
-      <View style={style.loader}>
-        <ActivityIndicator size="large"/>
-      </View>
-    )
-  }
-
+const Card: () => React$Node = () => {
   return (
     <>
-      
-      {/* part of cards tutorial */}
-      <FlatList
-        style={styles.container}
-        data={this.state.items}
-        keyExtractor={(item, index) => index.toString()}
-        renderItem={({item}) => <Card item={item}/>}
-      />
-
       <StatusBar barStyle="dark-content" />
       <SafeAreaView>
         <ScrollView
@@ -114,13 +64,6 @@ const App: () => React$Node = () => {
   );
 };
 
-//TODO: finish
-_get = async (endpoint) => {
-  const res = await fetch(endpoint);
-  const data = await res.json();
-  return data;
-}
-
 const styles = StyleSheet.create({
   scrollView: {
     backgroundColor: Colors.lighter,
@@ -158,12 +101,6 @@ const styles = StyleSheet.create({
     paddingRight: 12,
     textAlign: 'right',
   },
-   //added for cards
-  loader:{
-    flex:1,
-    alignItems:'center',
-    justifyContent:'center'
-  }
 });
 
-export default App;
+export default Card;
