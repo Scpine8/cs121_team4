@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -16,9 +16,10 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-const Card: () => React$Node = () => {
-  return (
-    <>
+class Card extends Component{
+  render(){
+    return (
+      <View>
       <StatusBar barStyle="dark-content" />
       <SafeAreaView>
         <ScrollView
@@ -60,9 +61,9 @@ const Card: () => React$Node = () => {
           </View>
         </ScrollView>
       </SafeAreaView>
-    </>
+    </View>
   );
-};
+}};
 
 const styles = StyleSheet.create({
   scrollView: {

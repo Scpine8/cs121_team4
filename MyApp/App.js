@@ -6,18 +6,17 @@
  * @flow
  */
 
-import React from 'react';
+import React, {Component} from 'react';
 import {
   SafeAreaView,
   StyleSheet,
-  ActivityIndicator, //added for cards
-  FlatList, //added for cards
   ScrollView,
   View,
   Text,
   StatusBar,
 } from 'react-native';
 
+// read about this
 import {
   Header,
   LearnMoreLinks,
@@ -26,100 +25,102 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-import Card from '/components/cards/Card';  //added for cards
 import { tsConstructorType } from '@babel/types';
 
-const App: () => React$Node = () => {
+class App extends Component{
   
   //added for cards
   //TODO: check constructor and componentDidMount
-  constructor(){
-    super();
-    this.state = {
-      items:[]
-    }
-  }
-  //added for cards
-  componentDidMount(){
-    this._get('https://jsonplaceholder.typicode.com/posts').then(
-      data => {
-        this.ListeningStateChangedEvent({items:data})
-      }
-    )
-  }
+  // constructor() = {
+  //   super(){}
+  //   this.state = {
+  //     items:[]
+  //   }
+  // };
+  // //added for cards
+  // componentDidMount()={
+  //   this._get('https://jsonplaceholder.typicode.com/posts').then(
+  //     data => {
+  //       this.ListeningStateChangedEvent({items:data})
+  //     }
+  //   )
+  // };
   
-  //added for cards
-  //supposed to be within render
-  if(this.state.items.length==0){
-    return(
-      <View style={style.loader}>
-        <ActivityIndicator size="large"/>
-      </View>
-    )
-  }
+  // //added for cards
+  // //supposed to be within render
+  // if(this.state.items.length==0){
+  //   return(
+  //     <View style={style.loader}>
+  //       <ActivityIndicator size="large"/>
+  //     </View>
+  //   )
+  
+  // }
+  render(){
+    return (
+      <View>
 
-  return (
-    <>
-      
-      {/* part of cards tutorial */}
-      <FlatList
+        {/* part of cards tutorial */}
+        {/* <FlatList
         style={styles.container}
         data={this.state.items}
         keyExtractor={(item, index) => index.toString()}
         renderItem={({item}) => <Card item={item}/>}
-      />
+      /> */}
 
-      <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
-        <ScrollView
-          contentInsetAdjustmentBehavior="automatic"
-          style={styles.scrollView}>
-          <Header />
-          {global.HermesInternal == null ? null : (
-            <View style={styles.engine}>
-              <Text style={styles.footer}>Engine: Hermes</Text>
-            </View>
-          )}
-          <View style={styles.body}>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Step One</Text>
-              <Text style={styles.sectionDescription}>
-                Edit <Text style={styles.highlight}>App.js</Text> to change this
-                screen and then come back to see your edits.
+        <StatusBar barStyle="dark-content" />
+        <SafeAreaView>
+          <ScrollView
+            contentInsetAdjustmentBehavior="automatic"
+            style={styles.scrollView}>
+            <Header />
+            {global.HermesInternal == null ? null : (
+              <View style={styles.engine}>
+                <Text style={styles.footer}>Engine: Hermes</Text>
+              </View>
+            )}
+            <View style={styles.body}>
+              <View style={styles.sectionContainer}>
+                <Text style={styles.sectionTitle}>Step One</Text>
+                <Text style={styles.sectionDescription}>
+                  Edit <Text style={styles.highlight}>App.js</Text> to change this
+                  screen and then come back to see your edits.
               </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>See Your Changes</Text>
-              <Text style={styles.sectionDescription}>
-                <ReloadInstructions />
+              </View>
+              <View style={styles.sectionContainer}>
+                <Text style={styles.sectionTitle}>See Your Changes</Text>
+                <Text style={styles.sectionDescription}>
+                  <ReloadInstructions />
+                </Text>
+              </View>
+              <View style={styles.sectionContainer}>
+                <Text style={styles.sectionTitle}>Debug</Text>
+                <Text style={styles.sectionDescription}>
+                  <DebugInstructions />
+                </Text>
+              </View>
+              <View style={styles.sectionContainer}>
+                <Text style={styles.sectionTitle}>Learn More</Text>
+                <Text style={styles.sectionDescription}>
+                  Read the docs to discover what to do next:
               </Text>
+              </View>
+              <LearnMoreLinks />
             </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Debug</Text>
-              <Text style={styles.sectionDescription}>
-                <DebugInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Learn More</Text>
-              <Text style={styles.sectionDescription}>
-                Read the docs to discover what to do next:
-              </Text>
-            </View>
-            <LearnMoreLinks />
-          </View>
-        </ScrollView>
-      </SafeAreaView>
-    </>
-  );
-};
+          </ScrollView>
+        </SafeAreaView>
+      </View>
+    );
+  }
+}
+  
 
 //TODO: finish
-_get = async (endpoint) => {
-  const res = await fetch(endpoint);
-  const data = await res.json();
-  return data;
-}
+// _get = async (endpoint) => {
+//   const res = await fetch(endpoint);
+//   const data = await res.json();
+//   return data;
+// }
 
 const styles = StyleSheet.create({
   scrollView: {
@@ -159,11 +160,11 @@ const styles = StyleSheet.create({
     textAlign: 'right',
   },
    //added for cards
-  loader:{
-    flex:1,
-    alignItems:'center',
-    justifyContent:'center'
-  }
+  // loader:{
+  //   flex:1,
+  //   alignItems:'center',
+  //   justifyContent:'center'
+  // }
 });
 
 export default App;
