@@ -7,6 +7,7 @@
  */
 
 import React, {Component} from 'react';
+import Inputs from './inputs.js';
 import {
   SafeAreaView,
   StyleSheet,
@@ -27,52 +28,26 @@ import {
 
 import { tsConstructorType } from '@babel/types';
 
+
+// const App = () => {
+//   return (
+//      <Inputs />
+//   )
+// }
+
 class App extends Component{
-  
-  //added for cards
-  //TODO: check constructor and componentDidMount
-  // constructor() = {
-  //   super(){}
-  //   this.state = {
-  //     items:[]
-  //   }
-  // };
-  // //added for cards
-  // componentDidMount()={
-  //   this._get('https://jsonplaceholder.typicode.com/posts').then(
-  //     data => {
-  //       this.ListeningStateChangedEvent({items:data})
-  //     }
-  //   )
-  // };
-  
-  // //added for cards
-  // //supposed to be within render
-  // if(this.state.items.length==0){
-  //   return(
-  //     <View style={style.loader}>
-  //       <ActivityIndicator size="large"/>
-  //     </View>
-  //   )
-  
-  // }
   render(){
     return (
-      <View>
 
-        {/* part of cards tutorial */}
-        {/* <FlatList
-        style={styles.container}
-        data={this.state.items}
-        keyExtractor={(item, index) => index.toString()}
-        renderItem={({item}) => <Card item={item}/>}
-      /> */}
+
+      <View>
 
         <StatusBar barStyle="dark-content" />
         <SafeAreaView>
           <ScrollView
             contentInsetAdjustmentBehavior="automatic"
             style={styles.scrollView}>
+
             <Header />
             {global.HermesInternal == null ? null : (
               <View style={styles.engine}>
@@ -83,10 +58,10 @@ class App extends Component{
               <View style={styles.sectionContainer}>
                 <Text style={styles.sectionTitle}>Step One</Text>
                 <Text style={styles.sectionDescription}>
-                  Edit <Text style={styles.highlight}>App.js</Text> to change this
-                  screen and then come back to see your edits.
+                  Add your current <Text style={styles.highlight}> Emotions and Action Plan</Text>
               </Text>
               </View>
+              <Inputs />
               <View style={styles.sectionContainer}>
                 <Text style={styles.sectionTitle}>See Your Changes</Text>
                 <Text style={styles.sectionDescription}>
@@ -99,10 +74,16 @@ class App extends Component{
                   <DebugInstructions />
                 </Text>
               </View>
+
+              <View style = {styles.sectionContainer}>
+              <Text>Open up App.js to start working on your app!</Text>
+              <Text>Changes you make will automatically reload.</Text>
+              <Text>Shake your phone to open the developer menu.</Text>
+             </View>
               <View style={styles.sectionContainer}>
                 <Text style={styles.sectionTitle}>Learn More</Text>
                 <Text style={styles.sectionDescription}>
-                  Read the docs to discover what to do next:
+                  Read the docs
               </Text>
               </View>
               <LearnMoreLinks />
@@ -113,7 +94,7 @@ class App extends Component{
     );
   }
 }
-  
+
 
 //TODO: finish
 // _get = async (endpoint) => {
