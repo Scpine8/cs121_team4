@@ -1,12 +1,21 @@
 import React, { Component } from 'react'
-import { View, Text, TouchableOpacity, TextInput, StyleSheet } from 'react-native'
+import { StatusBar, AsyncStorage, View, Text, TouchableOpacity, TextInput, StyleSheet } from 'react-native'
 
 class Inputs extends Component {
    state = {
-      Emotion: '',
-      ActionPlan: ''
+    'Emotion': '',
+     ActionPlan: ''
    }
+
+   emotionDidMount = () => AsyncStorage.getItem('Emotion').then((value) => this.setState({ 'Emotion': value }))
+
+   setEmotion = (value) => {
+    AsyncStorage.setItem('Emotion', value);
+    this.setState({ 'Emotion': value });
+ }
+
    handleEmail = (text) => {
+    AsyncStorage.setItem(Emotion, text);
       this.setState({ Emotion: text })
    }
    handlePassword = (text) => {
@@ -23,7 +32,10 @@ class Inputs extends Component {
                placeholder = "Emotion"
                placeholderTextColor = "#9a73ef"
                autoCapitalize = "none"
-               onChangeText = {this.handleEmail}/>
+               onChangeText = {this.setName}/>
+               <Text>
+               {this.state.name}
+            </Text>
 
             <TextInput style = {styles.input}
                underlineColorAndroid = "transparent"
@@ -47,11 +59,11 @@ export default Inputs
 
 const styles = StyleSheet.create({
    container: {
-      paddingTop: 23
+      paddingTop: 5
    },
    input: {
       margin: 15,
-      height: 80,
+      height: 40,
       borderColor: '#7a42f4',
       borderWidth: 1
    },
