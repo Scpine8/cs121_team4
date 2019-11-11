@@ -38,17 +38,14 @@ import { tsConstructorType } from '@babel/types';
 class App extends Component{
   render(){
     return (
-
-
       <View>
-
         <StatusBar barStyle="dark-content" />
         <SafeAreaView>
           <ScrollView
             contentInsetAdjustmentBehavior="automatic"
             style={styles.scrollView}>
 
-            <Header />
+            <Header /> 
             {global.HermesInternal == null ? null : (
               <View style={styles.engine}>
                 <Text style={styles.footer}>Engine: Hermes</Text>
@@ -59,34 +56,10 @@ class App extends Component{
                 <Text style={styles.sectionTitle}>Step One</Text>
                 <Text style={styles.sectionDescription}>
                   Add your current <Text style={styles.highlight}> Emotions and Action Plan</Text>
-              </Text>
+                </Text>
               </View>
               <Inputs />
-              <View style={styles.sectionContainer}>
-                <Text style={styles.sectionTitle}>See Your Changes</Text>
-                <Text style={styles.sectionDescription}>
-                  <ReloadInstructions />
-                </Text>
-              </View>
-              <View style={styles.sectionContainer}>
-                <Text style={styles.sectionTitle}>Debug</Text>
-                <Text style={styles.sectionDescription}>
-                  <DebugInstructions />
-                </Text>
-              </View>
-
-              <View style = {styles.sectionContainer}>
-              <Text>Open up App.js to start working on your app!</Text>
-              <Text>Changes you make will automatically reload.</Text>
-              <Text>Shake your phone to open the developer menu.</Text>
-             </View>
-              <View style={styles.sectionContainer}>
-                <Text style={styles.sectionTitle}>Learn More</Text>
-                <Text style={styles.sectionDescription}>
-                  Read the docs
-              </Text>
-              </View>
-              <LearnMoreLinks />
+              {/* <LearnMoreLinks /> */}
             </View>
           </ScrollView>
         </SafeAreaView>
