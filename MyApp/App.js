@@ -9,7 +9,7 @@
 import React, {Component} from 'react';
 import Inputs from './inputs.js';
 import {
-  SafeAreaView,
+  SafeAreaView, 
   StyleSheet,
   ScrollView,
   View,
