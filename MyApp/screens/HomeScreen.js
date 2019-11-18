@@ -3,27 +3,30 @@ import {
     StyleSheet, 
     TouchableOpacity, 
     Button, 
-    View, 
+    View,
+    Card,
     Text, 
     Image, 
     ActivityIndicator, 
     FlatList } from 'react-native';
-import { Card, ListItem, Button, Icon } from 'react-native-elements'
+import { Card, ListItem, Button, Icon } from 'react-native-elements';
 
-import Card from '/components/cards/Card';  //added for cards
+// import Card from '/components/cards/Card';  //added for cards;
 
 class HomeScreen extends Component{
     render() {
         return (
             <View style={styles.container}>
-                {/* <TouchableOpacity style={styles.card}>
+                <TouchableOpacity style={styles.card}>
                     <Image style={styles.cardImage} source={{url:'https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwid8oTY757lAhWtIDQIHeqfDz0QjRx6BAgBEAQ&url=https%3A%2F%2Fwww.petmd.com%2Fdog%2Fnutrition%2Fhow-help-puppy-who-isnt-gaining-weight&psig=AOvVaw2QnNSPalc7uEuE-ocryQtP&ust=1571249772073109'}}/>
                     <Text style={styles.cardText}>Card Title</Text>
-                </TouchableOpacity> */}
+                </TouchableOpacity>
                 <Button
                     title="Go to Action"
                     onPress={() => this.props.navigation.navigate('Action')}
                 />
+
+
             </View>
 
             // test 

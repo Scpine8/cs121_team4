@@ -47,7 +47,7 @@ class Inputs extends Component {
             <TouchableOpacity
                style = {styles.submitButton}
                onPress = {
-                  () => this.login(this.state.Emotion, this.state.ActionPlan)
+                  () => this.props.navigation.navigate('HomeScreen')      
                }>
                <Text style = {styles.submitButtonText}> Submit </Text>
             </TouchableOpacity>
