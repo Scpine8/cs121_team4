@@ -1,10 +1,22 @@
-import React, { Component } from "react";
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator} from 'react-navigation-stack';
 import HomeScreen from "./screens/HomeScreen";
 import ActionScreen from "./screens/Action";
-const Project= createStackNavigator({
+import React, { Component } from 'react';
+
+const AppContainer = createStackNavigator(
+  {
+  // HomeScreen: {
+  //   screen: HomeScreen
+  // },
+  // Action: {
+  //   screen: ActionScreen
+  // },
   HomeScreen: {screen: HomeScreen},
   Action: {screen: ActionScreen},
-});
-export default createAppContainer(Project);
+  },
+  {
+    initialRouteName: 'Home',
+  }
+);
+export default createAppContainer(AppContainer);

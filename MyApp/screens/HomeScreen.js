@@ -8,8 +8,13 @@ import {
     Text, 
     Image, 
     ActivityIndicator, 
+    StatusBar,
+    ScrollView,
+    Header,
+    SafeAreaView,
     FlatList } from 'react-native';
-import { Card, ListItem, Button, Icon } from 'react-native-elements';
+import Inputs from '../inputs.js';
+// import { ListItem, Icon } from 'react-native-elements';
 
 // import Card from '/components/cards/Card';  //added for cards;
 
@@ -25,9 +30,8 @@ class HomeScreen extends Component{
                     title="Go to Action"
                     onPress={() => this.props.navigation.navigate('Action')}
                 />
-
-
             </View>
+            
 
             // test 
             // <Card

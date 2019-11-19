@@ -9,32 +9,23 @@
 import React, {Component} from 'react';
 // import Home from './screens/HomeScreen.js';
 import Inputs from './inputs.js';
+
 import {
-  SafeAreaView, 
   StyleSheet,
-  ScrollView,
   View,
   Text,
   StatusBar,
+  SafeAreaView,
+  ScrollView
 } from 'react-native';
 
 // read about this
 import {
-  Header,
-  LearnMoreLinks,
   Colors,
-  DebugInstructions,
-  ReloadInstructions,
+  Header
 } from 'react-native/Libraries/NewAppScreen';
 
 import { tsConstructorType } from '@babel/types';
-
-
-// const App = () => {
-//   return (
-//      <Inputs />
-//   )
-// }
 
 class App extends Component{
   render(){
@@ -53,16 +44,16 @@ class App extends Component{
                 <Text style={styles.footer}>Engine: Hermes</Text>
               </View>
             )} */}
-            <View style={styles.body}>
-              {/* <View style={styles.sectionContainer}>
+            {/* <View style={styles.body}>
+              <View style={styles.sectionContainer}>
                 <Text style={styles.sectionTitle}>Step One</Text>
                 <Text style={styles.sectionDescription}>
                   Add your current <Text style={styles.highlight}> Emotions and Action Plan</Text>
                 </Text>
-              </View> */}
+              </View>
               
-              {/* <LearnMoreLinks /> */}
-            </View>
+              <LearnMoreLinks />
+            </View> */}
             
           </ScrollView>
         </SafeAreaView>
@@ -70,14 +61,6 @@ class App extends Component{
     );
   }
 }
-
-
-//TODO: finish
-// _get = async (endpoint) => {
-//   const res = await fetch(endpoint);
-//   const data = await res.json();
-//   return data;
-// }
 
 const styles = StyleSheet.create({
   scrollView: {

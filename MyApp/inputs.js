@@ -1,5 +1,6 @@
-import React, { Component } from 'react'
-import { StatusBar, AsyncStorage, View, Text, TouchableOpacity, TextInput, StyleSheet } from 'react-native'
+import React, { Component } from 'react';
+import { StatusBar, AsyncStorage, View, Text, TouchableOpacity, TextInput, StyleSheet, Button } from 'react-native';
+import App from './App.js'
 
 class Inputs extends Component {
    state = {
@@ -24,6 +25,7 @@ class Inputs extends Component {
    login = (Emotion, ActionPlan) => {
       alert('Emotion: ' + Emotion + ' ActionPlan: ' + ActionPlan)
    }
+   
    render() {
       return (
          <View style = {styles.container}>
@@ -44,13 +46,15 @@ class Inputs extends Component {
                autoCapitalize = "none"
                onChangeText = {this.handlePassword}/>
 
-            <TouchableOpacity
+            {/* <TouchableOpacity
                style = {styles.submitButton}
-               onPress = {
-                  () => this.props.navigation.navigate('HomeScreen')      
-               }>
+               onPress = {() => this.props.navigation.navigate('ActionScreen')}>
                <Text style = {styles.submitButtonText}> Submit </Text>
-            </TouchableOpacity>
+            </TouchableOpacity> */}
+            <Button
+               title="Go to Action Screen"
+               onPress={() => this.props.navigation.navigate('HomeScreen')}
+            />
          </View>
       )
    }
